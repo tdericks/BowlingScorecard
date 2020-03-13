@@ -124,7 +124,7 @@ namespace BowlingScorecard {
                     numberPressed = Convert.ToInt32(keyCode.ToString().ToUpper().Replace("NUMPAD", "").Replace("D", ""));
                     // only allow entries of a number less than the first ball
                     if (isSecondBall) {
-                        if (isInTenthFrame && txtBall1Frame10.Text != "X") {
+                        if ((isInTenthFrame && txtBall1Frame10.Text != "X") || !isInTenthFrame) {
                             validKeyPressed = (numberPressed <= firstBallPinsStanding);
                             isSpare = (numberPressed == firstBallPinsStanding);
                         }
